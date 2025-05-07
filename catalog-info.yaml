@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: bi3b5wiam-nodejs-gitops
+  description: This is GitOps manifest for bi3b5wiam-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=bi3b5wiam-nodejs
+    backstage.io/kubernetes-id: bi3b5wiam-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: bi3b5wiam-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:bi3b5wiam-nodejs
